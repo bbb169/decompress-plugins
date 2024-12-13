@@ -1,7 +1,9 @@
+'use strict';
 
-export const pluginZip = async (input: string, output: string): Promise<void> => {
-  console.log('7z');
-  
+import { Stream } from "stream";
+import { fileTypeFromBuffer, fileTypeStream } from 'file-type';
+import { isStream } from 'is-stream';
+
 const handle7zFile = () => (input: Buffer | Stream) => {
 	if (!Buffer.isBuffer(input) && !isStream(input)) {
 		return Promise.reject(new TypeError(`Expected a Buffer or Stream, got ${typeof input}`));

@@ -14,6 +14,9 @@ importers:
 
   packages/plugin-7z:
     dependencies:
+      7z-stream:
+        specifier: ^0.1.1
+        version: 0.1.1
       file-type:
         specifier: ^19.6.0
         version: 19.6.0
@@ -32,6 +35,10 @@ importers:
         version: 5.7.2
 
   packages/plugin-rar:
+    dependencies:
+      rar-stream:
+        specifier: ^3.3.0
+        version: 3.3.0
     devDependencies:
       '@types/node':
         specifier: ^22.10.2
@@ -42,6 +49,9 @@ importers:
 
 packages:
 
+  7z-stream@0.1.1:
+    resolution: {integrity: sha512-acdei/JMj1kJRcmUZ/A1EwRAhsgVAJZqISy1VHrscccJZYNbj3j7Ph7WfxoWxY+Z2e7C9bmomzJqdkjIq6v/4Q==}
+
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
 
@@ -50,6 +60,14 @@ packages:
 
   '@types/node@22.10.2':
     resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
+
+  amdefine@0.1.1:
+    resolution: {integrity: sha512-cE/769sItEDt5sSdqmrWMsat+XaA5FJiEou+ZwlY7ef/Jf/517k6nYyUIRPR2o/QbpBg4FiYXj9GyRGNg5f/bg==}
+    engines: {node: '>=0.4.2'}
+
+  commander@2.0.0:
+    resolution: {integrity: sha512-qebjpyeaA/nJ4w3EO2cV2++/zEkccPnjWogzA2rff+Lk8ILI75vULeTmyd4wPxWdKwtP3J+G39IXVZadh0UHyw==}
+    engines: {node: '>= 0.6.x'}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -90,6 +108,10 @@ packages:
   lodash.negate@3.0.2:
     resolution: {integrity: sha512-JGJYYVslKYC0tRMm/7igfdHulCjoXjoganRNWM8AgS+RXfOvFnPkOveDhPI65F9aAypCX9QEEQoBqWf7Q6uAeA==}
 
+  lzma-purejs@0.9.3:
+    resolution: {integrity: sha512-6VPTP6dEwoEeXYxK9/9ZsUH8zD/lGdTCKenEv2C4mrZkp111CttGYVVrLTcCY6BM+dnADTMrARnG8PZQctJUeg==}
+    hasBin: true
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -104,6 +126,10 @@ packages:
   peek-readable@5.3.1:
     resolution: {integrity: sha512-GVlENSDW6KHaXcd9zkZltB7tCLosKB/4Hg0fqBJkAoBgYG2Tn1xtMgXtSUuMU9AK/gCm/tTdT8mgAeF4YNeeqw==}
     engines: {node: '>=14.16'}
+
+  rar-stream@3.3.0:
+    resolution: {integrity: sha512-rKMU1Pd+BUoplQibodBo7SWdb1ffCl+wqNGyhet9YxK2J32MszDWkb/d66/1FJtYZ3MGzpJP4gY4t3qicIxIgA==}
+    engines: {node: '>=18'}
 
   strtok3@9.1.1:
     resolution: {integrity: sha512-FhwotcEqjr241ZbjFzjlIYg6c5/L/s4yBGWSMvJ9UoExiSqL+FnFA/CaeZx17WGaZMS/4SOZp8wH18jSS4R4lw==}
@@ -161,6 +187,10 @@ packages:
 
 snapshots:
 
+  7z-stream@0.1.1:
+    dependencies:
+      lzma-purejs: 0.9.3
+
   '@sec-ant/readable-stream@0.4.1': {}
 
   '@tokenizer/token@0.3.0': {}
@@ -168,6 +198,10 @@ snapshots:
   '@types/node@22.10.2':
     dependencies:
       undici-types: 6.20.0
+
+  amdefine@0.1.1: {}
+
+  commander@2.0.0: {}
 
   debug@4.4.0:
     dependencies:
@@ -199,6 +233,11 @@ snapshots:
 
   lodash.negate@3.0.2: {}
 
+  lzma-purejs@0.9.3:
+    dependencies:
+      amdefine: 0.1.1
+      commander: 2.0.0
+
   ms@2.1.3: {}
 
   node-7z@3.0.0:
@@ -216,6 +255,8 @@ snapshots:
   normalize-path@3.0.0: {}
 
   peek-readable@5.3.1: {}
+
+  rar-stream@3.3.0: {}
 
   strtok3@9.1.1:
     dependencies:

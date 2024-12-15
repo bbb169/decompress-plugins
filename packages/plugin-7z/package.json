@@ -14,6 +14,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "7z-stream": "^0.1.1",
     "file-type": "^19.6.0",
     "is-stream": "^4.0.1",
     "node-7z": "^3.0.0"

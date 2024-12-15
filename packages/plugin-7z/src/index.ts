@@ -3,6 +3,7 @@
 import { Stream } from "stream";
 import { fileTypeFromBuffer, fileTypeStream } from 'file-type';
 import { isStream } from 'is-stream';
+import { Sevenzip } from '7z-stream';
 
 const handle7zFile = () => (input: Buffer | Stream) => {
 	if (!Buffer.isBuffer(input) && !isStream(input)) {
@@ -14,7 +15,7 @@ const handle7zFile = () => (input: Buffer | Stream) => {
     return Promise.resolve([]);
 	} 
 
-	const extract = tarStream.extract();
+	const extract = Sevenzip(input);
 	const files = [];
 
 	extract.on('entry', (header, stream, cb) => {
